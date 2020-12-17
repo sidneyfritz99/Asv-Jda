@@ -28,7 +28,7 @@ public class AsvMarkdownTest {
 
         Assertions.assertEquals("`" + MARKDOWN_TEXT + "`", monospace(MARKDOWN_TEXT));
         Assertions.assertEquals("```" + MARKDOWN_TEXT + "```", codeblock(MARKDOWN_TEXT));
-        Assertions.assertEquals("```java\n" + MARKDOWN_TEXT + "````", codeblock("java", MARKDOWN_TEXT));
+        Assertions.assertEquals("```java\n" + MARKDOWN_TEXT + "```", codeblock("java", MARKDOWN_TEXT));
     }
 
     @Test
@@ -46,7 +46,7 @@ public class AsvMarkdownTest {
         Assertions.assertEquals("||ASV", markdown.compute("**__||ASV__**"));
         Assertions.assertEquals("||ASV|-|", markdown.compute("**__||ASV|-|__**"));
         Assertions.assertEquals("**ASV", markdown.compute("**ASV"));
-        Assertions.assertEquals("**ASV", markdown.compute("ASV**"));
-        Assertions.assertEquals("ASV", markdown.compute("****ASV****"));
+        Assertions.assertEquals("ASV**", markdown.compute("ASV**"));
+        Assertions.assertEquals("*ASV*", markdown.compute("****ASV****"));
     }
 }
