@@ -31,6 +31,7 @@ plugins {
     id("com.jfrog.bintray") version "1.8.1"
     id("com.github.ben-manes.versions") version "0.19.0"
     id("com.github.johnrengelman.shadow") version "5.1.0"
+    id("org.sonarqube") version "2.7"
 }
 
 val versionObj = Version(major = "4", minor = "2", revision = "0")
