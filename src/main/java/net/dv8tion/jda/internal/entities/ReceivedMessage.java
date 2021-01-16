@@ -300,12 +300,16 @@ public class ReceivedMessage extends AbstractMessage
         return user;
     }
 
-    @Nonnull
-    public synchronized List<User> getMentionedUsers(boolean create)
-    {
+    private List<User> getMentionedUsers(boolean create) {
         if(!create)
             return new ArrayList<>();
+        return getMentionedUsers();
+    }
 
+    @Nonnull
+    @Override
+    public synchronized List<User> getMentionedUsers()
+    {
         if (userMentions == null)
             userMentions = Collections.unmodifiableList(processMentions(MentionType.USER, new ArrayList<>(), true, this::matchUser));
         return userMentions;
@@ -324,12 +328,17 @@ public class ReceivedMessage extends AbstractMessage
         return getJDA().getTextChannelById(channelId);
     }
 
-    @Nonnull
-    public synchronized List<TextChannel> getMentionedChannels(boolean create)
+    private List<TextChannel> getMentionedChannels(boolean create)
     {
         if(!create)
             return new ArrayList<>();
+        return getMentionedChannels();
+    }
 
+    @Nonnull
+    @Override
+    public synchronized List<TextChannel> getMentionedChannels()
+    {
         if (channelMentions == null)
             channelMentions = Collections.unmodifiableList(processMentions(MentionType.CHANNEL, new ArrayList<>(), true, this::matchTextChannel));
         return channelMentions;
@@ -353,12 +362,16 @@ public class ReceivedMessage extends AbstractMessage
             return getJDA().getRoleById(roleId);
     }
 
-    @Nonnull
-    public synchronized List<Role> getMentionedRoles(boolean create)
-    {
+    private List<Role> getMentionedRoles(boolean create) {
         if(!create)
             return new ArrayList<>();
+        return getMentionedRoles();
+    }
 
+    @Nonnull
+    @Override
+    public synchronized List<Role> getMentionedRoles()
+    {
         if (roleMentions == null)
             roleMentions = Collections.unmodifiableList(processMentions(MentionType.ROLE, new ArrayList<>(), true, this::matchRole));
         return roleMentions;
@@ -417,9 +430,6 @@ public class ReceivedMessage extends AbstractMessage
         {
             switch (type)
             {
-                case EVERYONE:
-                case HERE:
-                default: continue;
                 case CHANNEL:
                     mentions.addAll(getMentionedChannels(channel));
                     channel = false;
@@ -435,6 +445,7 @@ public class ReceivedMessage extends AbstractMessage
                 case EMOTE:
                     mentions.addAll(getEmotes(emote));
                     emote = false;
+                    break;
             }
         }
         return Collections.unmodifiableList(mentions);
@@ -727,12 +738,17 @@ public class ReceivedMessage extends AbstractMessage
         return emote;
     }
 
-    @Nonnull
     public synchronized List<Emote> getEmotes(boolean create)
     {
-        if(!create)
+        if (!create)
             return new ArrayList<>();
+        return getEmotes();
+    }
 
+    @Nonnull
+    @Override
+    public synchronized List<Emote> getEmotes()
+    {
         if (this.emoteMentions == null)
             emoteMentions = Collections.unmodifiableList(processMentions(MentionType.EMOTE, new ArrayList<>(), true, this::matchEmote));
         return emoteMentions;

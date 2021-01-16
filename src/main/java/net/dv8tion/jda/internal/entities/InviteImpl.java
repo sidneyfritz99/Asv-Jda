@@ -54,6 +54,7 @@ public class InviteImpl implements Invite
     private final OffsetDateTime timeCreated;
     private final int uses;
     private final Invite.InviteType type;
+    private final String ONLY_VALID_EXP_INV = "Only valid for expanded invites";
 
     public InviteImpl(final JDAImpl api, final String code, final boolean expanded, final User inviter,
             final int maxAge, final int maxUses, final boolean temporary, final OffsetDateTime timeCreated,
@@ -209,7 +210,7 @@ public class InviteImpl implements Invite
     public int getMaxAge()
     {
         if (!this.expanded)
-            throw new IllegalStateException("Only valid for expanded invites");
+            throw new IllegalStateException(ONLY_VALID_EXP_INV);
         return this.maxAge;
     }
 
@@ -217,7 +218,7 @@ public class InviteImpl implements Invite
     public int getMaxUses()
     {
         if (!this.expanded)
-            throw new IllegalStateException("Only valid for expanded invites");
+            throw new IllegalStateException(ONLY_VALID_EXP_INV);
         return this.maxUses;
     }
 
@@ -226,7 +227,7 @@ public class InviteImpl implements Invite
     public OffsetDateTime getTimeCreated()
     {
         if (!this.expanded)
-            throw new IllegalStateException("Only valid for expanded invites");
+            throw new IllegalStateException(ONLY_VALID_EXP_INV);
         return this.timeCreated;
     }
 
@@ -234,7 +235,7 @@ public class InviteImpl implements Invite
     public int getUses()
     {
         if (!this.expanded)
-            throw new IllegalStateException("Only valid for expanded invites");
+            throw new IllegalStateException(ONLY_VALID_EXP_INV);
         return this.uses;
     }
 
@@ -248,7 +249,7 @@ public class InviteImpl implements Invite
     public boolean isTemporary()
     {
         if (!this.expanded)
-            throw new IllegalStateException("Only valid for expanded invites");
+            throw new IllegalStateException(ONLY_VALID_EXP_INV);
         return this.temporary;
     }
 
