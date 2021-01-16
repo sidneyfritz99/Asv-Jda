@@ -29,11 +29,11 @@ import javax.annotation.Nonnull;
  */
 public class SelfUpdateDiscriminatorEvent extends GenericSelfUpdateEvent<String>
 {
-    public static final String IDENTIFIER = "discriminator";
+    public static final String EVENT_TYPE = "discriminator";
 
     public SelfUpdateDiscriminatorEvent(@Nonnull JDA api, long responseNumber, @Nonnull String oldDiscriminator)
     {
-        super(api, responseNumber, oldDiscriminator, api.getSelfUser().getDiscriminator(), IDENTIFIER);
+        super(api, responseNumber, oldDiscriminator, api.getSelfUser().getDiscriminator(), EVENT_TYPE);
     }
 
     /**

@@ -30,11 +30,11 @@ import javax.annotation.Nonnull;
  */
 public class GuildUpdateBoostTierEvent extends GenericGuildUpdateEvent<Guild.BoostTier>
 {
-    public static final String IDENTIFIER = "boost_tier";
+    public static final String EVENT_TYPE = "boost_tier";
 
     public GuildUpdateBoostTierEvent(@Nonnull JDA api, long responseNumber, @Nonnull Guild guild, @Nonnull Guild.BoostTier previous)
     {
-        super(api, responseNumber, guild, previous, guild.getBoostTier(), IDENTIFIER);
+        super(api, responseNumber, guild, previous, guild.getBoostTier(), EVENT_TYPE);
     }
 
     /**

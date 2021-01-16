@@ -29,11 +29,11 @@ import javax.annotation.Nonnull;
  */
 public class VoiceChannelUpdatePositionEvent extends GenericVoiceChannelUpdateEvent<Integer>
 {
-    public static final String IDENTIFIER = "position";
+    public static final String EVENT_TYPE = "position";
 
     public VoiceChannelUpdatePositionEvent(@Nonnull JDA api, long responseNumber, @Nonnull VoiceChannel channel, int oldPosition)
     {
-        super(api, responseNumber, channel, oldPosition, channel.getPositionRaw(), IDENTIFIER);
+        super(api, responseNumber, channel, oldPosition, channel.getPositionRaw(), EVENT_TYPE);
     }
 
     /**

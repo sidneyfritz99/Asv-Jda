@@ -30,11 +30,11 @@ import javax.annotation.Nonnull;
  */
 public class EmoteUpdateNameEvent extends GenericEmoteUpdateEvent<String>
 {
-    public static final String IDENTIFIER = "name";
+    public static final String EVENT_TYPE = "name";
 
     public EmoteUpdateNameEvent(@Nonnull JDA api, long responseNumber, @Nonnull Emote emote, @Nonnull String oldName)
     {
-        super(api, responseNumber, emote, oldName, emote.getName(), IDENTIFIER);
+        super(api, responseNumber, emote, oldName, emote.getName(), EVENT_TYPE);
     }
 
     /**

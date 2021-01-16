@@ -42,11 +42,11 @@ import javax.annotation.Nullable;
  */
 public class UserUpdateAvatarEvent extends GenericUserUpdateEvent<String>
 {
-    public static final String IDENTIFIER = "avatar";
+    public static final String EVENT_TYPE = "avatar";
 
     public UserUpdateAvatarEvent(@Nonnull JDA api, long responseNumber, @Nonnull User user, @Nullable String oldAvatar)
     {
-        super(api, responseNumber, user, oldAvatar, user.getAvatarId(), IDENTIFIER);
+        super(api, responseNumber, user, oldAvatar, user.getAvatarId(), EVENT_TYPE);
     }
 
     /**

@@ -30,11 +30,11 @@ import javax.annotation.Nonnull;
  */
 public class GuildUpdateMaxPresencesEvent extends GenericGuildUpdateEvent<Integer>
 {
-    public static final String IDENTIFIER = "max_presences";
+    public static final String EVENT_TYPE = "max_presences";
 
     public GuildUpdateMaxPresencesEvent(@Nonnull JDA api, long responseNumber, @Nonnull Guild guild, int previous)
     {
-        super(api, responseNumber, guild, previous, guild.getMaxPresences(), IDENTIFIER);
+        super(api, responseNumber, guild, previous, guild.getMaxPresences(), EVENT_TYPE);
     }
 
     /**

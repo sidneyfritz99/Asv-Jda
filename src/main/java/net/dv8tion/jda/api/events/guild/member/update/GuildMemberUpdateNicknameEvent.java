@@ -42,11 +42,11 @@ import javax.annotation.Nullable;
  */
 public class GuildMemberUpdateNicknameEvent extends GenericGuildMemberUpdateEvent<String>
 {
-    public static final String IDENTIFIER = "nick";
+    public static final String EVENT_TYPE = "nick";
 
     public GuildMemberUpdateNicknameEvent(@Nonnull JDA api, long responseNumber, @Nonnull Member member, @Nullable String oldNick)
     {
-        super(api, responseNumber, member, oldNick, member.getNickname(), IDENTIFIER);
+        super(api, responseNumber, member, oldNick, member.getNickname(), EVENT_TYPE);
     }
 
     /**

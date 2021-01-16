@@ -28,7 +28,7 @@ import javax.annotation.Nonnull;
  */
 public class StatusChangeEvent extends Event implements UpdateEvent<JDA, JDA.Status>
 {
-    public static final String IDENTIFIER = "status";
+    public static final String EVENT_TYPE = "status";
 
     protected final JDA.Status newStatus;
     protected final JDA.Status oldStatus;
@@ -66,7 +66,7 @@ public class StatusChangeEvent extends Event implements UpdateEvent<JDA, JDA.Sta
     @Override
     public String getPropertyIdentifier()
     {
-        return IDENTIFIER;
+        return EVENT_TYPE;
     }
 
     @Nonnull

@@ -30,11 +30,11 @@ import javax.annotation.Nonnull;
  */
 public class GuildUpdateNameEvent extends GenericGuildUpdateEvent<String>
 {
-    public static final String IDENTIFIER = "name";
+    public static final String EVENT_TYPE = "name";
 
     public GuildUpdateNameEvent(@Nonnull JDA api, long responseNumber, @Nonnull Guild guild, @Nonnull String oldName)
     {
-        super(api, responseNumber, guild, oldName, guild.getName(), IDENTIFIER);
+        super(api, responseNumber, guild, oldName, guild.getName(), EVENT_TYPE);
     }
 
     /**

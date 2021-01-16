@@ -30,11 +30,11 @@ import javax.annotation.Nonnull;
  */
 public class GuildUpdateMFALevelEvent extends GenericGuildUpdateEvent<Guild.MFALevel>
 {
-    public static final String IDENTIFIER = "mfa_level";
+    public static final String EVENT_TYPE = "mfa_level";
 
     public GuildUpdateMFALevelEvent(@Nonnull JDA api, long responseNumber, @Nonnull Guild guild, @Nonnull Guild.MFALevel oldMFALevel)
     {
-        super(api, responseNumber, guild, oldMFALevel, guild.getRequiredMFALevel(), IDENTIFIER);
+        super(api, responseNumber, guild, oldMFALevel, guild.getRequiredMFALevel(), EVENT_TYPE);
     }
 
     /**

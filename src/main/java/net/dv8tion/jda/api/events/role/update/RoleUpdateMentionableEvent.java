@@ -30,11 +30,11 @@ import javax.annotation.Nonnull;
  */
 public class RoleUpdateMentionableEvent extends GenericRoleUpdateEvent<Boolean>
 {
-    public static final String IDENTIFIER = "mentionable";
+    public static final String EVENT_TYPE = "mentionable";
 
     public RoleUpdateMentionableEvent(@Nonnull JDA api, long responseNumber, @Nonnull Role role, boolean wasMentionable)
     {
-        super(api, responseNumber, role, wasMentionable, !wasMentionable, IDENTIFIER);
+        super(api, responseNumber, role, wasMentionable, !wasMentionable, EVENT_TYPE);
     }
 
     /**

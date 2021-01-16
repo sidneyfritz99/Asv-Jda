@@ -30,11 +30,11 @@ import javax.annotation.Nonnull;
  */
 public class GuildUpdateExplicitContentLevelEvent extends GenericGuildUpdateEvent<Guild.ExplicitContentLevel>
 {
-    public static final String IDENTIFIER = "explicit_content_filter";
+    public static final String EVENT_TYPE = "explicit_content_filter";
 
     public GuildUpdateExplicitContentLevelEvent(@Nonnull JDA api, long responseNumber, @Nonnull Guild guild, @Nonnull Guild.ExplicitContentLevel oldLevel)
     {
-        super(api, responseNumber, guild, oldLevel, guild.getExplicitContentLevel(), IDENTIFIER);
+        super(api, responseNumber, guild, oldLevel, guild.getExplicitContentLevel(), EVENT_TYPE);
     }
 
     /**

@@ -35,7 +35,7 @@ import javax.annotation.Nullable;
  */
 public interface GuildVoiceUpdateEvent extends UpdateEvent<Member, VoiceChannel>
 {
-    String IDENTIFIER = "voice-channel";
+    String EVENT_TYPE = "voice-channel";
 
     /**
      * The {@link net.dv8tion.jda.api.entities.VoiceChannel VoiceChannel} that the {@link net.dv8tion.jda.api.entities.Member Member} is moved from

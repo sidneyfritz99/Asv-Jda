@@ -30,12 +30,12 @@ import javax.annotation.Nullable;
  */
 public class SelfUpdateAvatarEvent extends GenericSelfUpdateEvent<String>
 {
-    public static final String IDENTIFIER = "avatar";
+    public static final String EVENT_TYPE = "avatar";
     private static final String AVATAR_URL = "https://cdn.discordapp.com/avatars/%s/%s%s";
 
     public SelfUpdateAvatarEvent(@Nonnull JDA api, long responseNumber, @Nullable String oldAvatarId)
     {
-        super(api, responseNumber, oldAvatarId, api.getSelfUser().getAvatarId(), IDENTIFIER);
+        super(api, responseNumber, oldAvatarId, api.getSelfUser().getAvatarId(), EVENT_TYPE);
     }
 
     /**

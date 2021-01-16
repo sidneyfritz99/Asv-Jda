@@ -30,11 +30,11 @@ import javax.annotation.Nullable;
  */
 public class TextChannelUpdateTopicEvent extends GenericTextChannelUpdateEvent<String>
 {
-    public static final String IDENTIFIER = "topic";
+    public static final String EVENT_TYPE = "topic";
 
     public TextChannelUpdateTopicEvent(@Nonnull JDA api, long responseNumber, @Nonnull TextChannel channel, @Nullable String oldTopic)
     {
-        super(api, responseNumber, channel, oldTopic, channel.getTopic(), IDENTIFIER);
+        super(api, responseNumber, channel, oldTopic, channel.getTopic(), EVENT_TYPE);
     }
 
     /**

@@ -332,9 +332,6 @@ public interface Activity
         {
             switch (key)
             {
-                case 0:
-                default:
-                    return DEFAULT;
                 case 1:
                     return STREAMING;
                 case 2:
@@ -343,6 +340,8 @@ public interface Activity
                     return WATCHING;
                 case 4:
                     return CUSTOM_STATUS;
+                default:
+                    return DEFAULT;
             }
         }
     }

@@ -43,14 +43,14 @@ import javax.annotation.Nonnull;
  */
 public class UserUpdateOnlineStatusEvent extends GenericUserUpdateEvent<OnlineStatus> implements GenericUserPresenceEvent
 {
-    public static final String IDENTIFIER = "status";
+    public static final String EVENT_TYPE = "status";
 
     private final Guild guild;
     private final Member member;
 
     public UserUpdateOnlineStatusEvent(@Nonnull JDA api, long responseNumber, @Nonnull Member member, @Nonnull OnlineStatus oldOnlineStatus)
     {
-        super(api, responseNumber, member.getUser(), oldOnlineStatus, member.getOnlineStatus(), IDENTIFIER);
+        super(api, responseNumber, member.getUser(), oldOnlineStatus, member.getOnlineStatus(), EVENT_TYPE);
         this.guild = member.getGuild();
         this.member = member;
     }

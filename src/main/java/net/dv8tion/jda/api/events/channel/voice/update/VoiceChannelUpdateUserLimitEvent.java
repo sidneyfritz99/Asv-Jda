@@ -29,11 +29,11 @@ import javax.annotation.Nonnull;
  */
 public class VoiceChannelUpdateUserLimitEvent extends GenericVoiceChannelUpdateEvent<Integer>
 {
-    public static final String IDENTIFIER = "userlimit";
+    public static final String EVENT_TYPE = "userlimit";
 
     public VoiceChannelUpdateUserLimitEvent(@Nonnull JDA api, long responseNumber, @Nonnull VoiceChannel channel, int oldUserLimit)
     {
-        super(api, responseNumber, channel, oldUserLimit, channel.getUserLimit(), IDENTIFIER);
+        super(api, responseNumber, channel, oldUserLimit, channel.getUserLimit(), EVENT_TYPE);
     }
 
     /**

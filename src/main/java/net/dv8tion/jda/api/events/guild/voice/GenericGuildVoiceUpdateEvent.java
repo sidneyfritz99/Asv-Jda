@@ -53,7 +53,7 @@ class GenericGuildVoiceUpdateEvent extends GenericGuildVoiceEvent implements Gui
     @Override
     public String getPropertyIdentifier()
     {
-        return IDENTIFIER;
+        return EVENT_TYPE;
     }
 
     @Nonnull

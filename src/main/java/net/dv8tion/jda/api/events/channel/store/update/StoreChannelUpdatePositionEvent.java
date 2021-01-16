@@ -30,11 +30,11 @@ import javax.annotation.Nonnull;
  */
 public class StoreChannelUpdatePositionEvent extends GenericStoreChannelUpdateEvent<Integer>
 {
-    public static final String IDENTIFIER = "position";
+    public static final String EVENT_TYPE = "position";
 
     public StoreChannelUpdatePositionEvent(@Nonnull JDA api, long responseNumber, @Nonnull StoreChannel channel, int prev)
     {
-        super(api, responseNumber, channel, prev, channel.getPositionRaw(), IDENTIFIER);
+        super(api, responseNumber, channel, prev, channel.getPositionRaw(), EVENT_TYPE);
     }
 
     /**

@@ -30,7 +30,7 @@ import javax.annotation.Nonnull;
  */
 public class GatewayPingEvent extends Event implements UpdateEvent<JDA, Long>
 {
-    public static final String IDENTIFIER = "gateway-ping";
+    public static final String EVENT_TYPE = "gateway-ping";
     private final long next, prev;
 
     public GatewayPingEvent(@Nonnull JDA api, long old)
@@ -64,7 +64,7 @@ public class GatewayPingEvent extends Event implements UpdateEvent<JDA, Long>
     @Override
     public String getPropertyIdentifier()
     {
-        return IDENTIFIER;
+        return EVENT_TYPE;
     }
 
     @Nonnull

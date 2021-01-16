@@ -32,11 +32,11 @@ import java.util.List;
  */
 public class EmoteUpdateRolesEvent extends GenericEmoteUpdateEvent<List<Role>>
 {
-    public static final String IDENTIFIER = "roles";
+    public static final String EVENT_TYPE = "roles";
 
     public EmoteUpdateRolesEvent(@Nonnull JDA api, long responseNumber, @Nonnull Emote emote, @Nonnull List<Role> oldRoles)
     {
-        super(api, responseNumber, emote, oldRoles, emote.getRoles(), IDENTIFIER);
+        super(api, responseNumber, emote, oldRoles, emote.getRoles(), EVENT_TYPE);
     }
 
     /**

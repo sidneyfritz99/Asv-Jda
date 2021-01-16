@@ -51,10 +51,10 @@ public interface UpdateEvent<E, T> extends GenericEvent
      * {
      *     switch (event.getPropertyIdentifier())
      *     {
-     *     case RoleUpdateColorEvent.IDENTIFIER:
+     *     case RoleUpdateColorEvent.EVENT_TYPE:
      *         System.out.printf("Updated color for role: %s%n", event);
      *         break;
-     *     case RoleUpdatePositionEvent.IDENTIFIER:
+     *     case RoleUpdatePositionEvent.EVENT_TYPE:
      *         RoleUpdatePositionEvent update = (RoleUpdatePositionEvent) event;
      *         System.out.printf("Updated position for role: %s raw(%s{@literal ->}%s)%n", event, update.getOldPositionRaw(), update.getNewPositionRaw());
      *         break;

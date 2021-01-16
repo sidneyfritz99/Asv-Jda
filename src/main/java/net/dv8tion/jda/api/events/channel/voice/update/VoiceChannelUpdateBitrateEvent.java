@@ -29,11 +29,11 @@ import javax.annotation.Nonnull;
  */
 public class VoiceChannelUpdateBitrateEvent extends GenericVoiceChannelUpdateEvent<Integer>
 {
-    public static final String IDENTIFIER = "bitrate";
+    public static final String EVENT_TYPE = "bitrate";
 
     public VoiceChannelUpdateBitrateEvent(@Nonnull JDA api, long responseNumber, @Nonnull VoiceChannel channel, int oldBitrate)
     {
-        super(api, responseNumber, channel, oldBitrate, channel.getBitrate(), IDENTIFIER);
+        super(api, responseNumber, channel, oldBitrate, channel.getBitrate(), EVENT_TYPE);
     }
 
     /**

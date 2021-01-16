@@ -30,11 +30,11 @@ import javax.annotation.Nonnull;
  */
 public class GuildUpdateVerificationLevelEvent extends GenericGuildUpdateEvent<Guild.VerificationLevel>
 {
-    public static final String IDENTIFIER = "verification_level";
+    public static final String EVENT_TYPE = "verification_level";
 
     public GuildUpdateVerificationLevelEvent(@Nonnull JDA api, long responseNumber, @Nonnull Guild guild, @Nonnull Guild.VerificationLevel oldVerificationLevel)
     {
-        super(api, responseNumber, guild, oldVerificationLevel, guild.getVerificationLevel(), IDENTIFIER);
+        super(api, responseNumber, guild, oldVerificationLevel, guild.getVerificationLevel(), EVENT_TYPE);
     }
 
     /**

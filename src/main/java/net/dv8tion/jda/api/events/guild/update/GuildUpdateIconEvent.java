@@ -31,11 +31,11 @@ import javax.annotation.Nullable;
  */
 public class GuildUpdateIconEvent extends GenericGuildUpdateEvent<String>
 {
-    public static final String IDENTIFIER = "icon";
+    public static final String EVENT_TYPE = "icon";
 
     public GuildUpdateIconEvent(@Nonnull JDA api, long responseNumber, @Nonnull Guild guild, @Nullable String oldIconId)
     {
-        super(api, responseNumber, guild, oldIconId, guild.getIconId(), IDENTIFIER);
+        super(api, responseNumber, guild, oldIconId, guild.getIconId(), EVENT_TYPE);
     }
 
     /**

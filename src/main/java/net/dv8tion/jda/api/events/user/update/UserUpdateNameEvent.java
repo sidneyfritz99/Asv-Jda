@@ -41,11 +41,11 @@ import javax.annotation.Nonnull;
  */
 public class UserUpdateNameEvent extends GenericUserUpdateEvent<String>
 {
-    public static final String IDENTIFIER = "name";
+    public static final String EVENT_TYPE = "name";
 
     public UserUpdateNameEvent(@Nonnull JDA api, long responseNumber, @Nonnull User user, @Nonnull String oldName)
     {
-        super(api, responseNumber, user, oldName, user.getName(), IDENTIFIER);
+        super(api, responseNumber, user, oldName, user.getName(), EVENT_TYPE);
     }
 
     /**

@@ -29,11 +29,11 @@ import javax.annotation.Nonnull;
  */
 public class SelfUpdateNameEvent extends GenericSelfUpdateEvent<String>
 {
-    public static final String IDENTIFIER = "name";
+    public static final String EVENT_TYPE = "name";
 
     public SelfUpdateNameEvent(@Nonnull JDA api, long responseNumber, @Nonnull String oldName)
     {
-        super(api, responseNumber, oldName, api.getSelfUser().getName(), IDENTIFIER);
+        super(api, responseNumber, oldName, api.getSelfUser().getName(), EVENT_TYPE);
     }
 
     /**

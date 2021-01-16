@@ -33,11 +33,11 @@ import javax.annotation.Nullable;
  */
 public class GuildUpdateSystemChannelEvent extends GenericGuildUpdateEvent<TextChannel>
 {
-    public static final String IDENTIFIER = "system_channel";
+    public static final String EVENT_TYPE = "system_channel";
 
     public GuildUpdateSystemChannelEvent(@Nonnull JDA api, long responseNumber, @Nonnull Guild guild, @Nullable TextChannel oldSystemChannel)
     {
-        super(api, responseNumber, guild, oldSystemChannel, guild.getSystemChannel(), IDENTIFIER);
+        super(api, responseNumber, guild, oldSystemChannel, guild.getSystemChannel(), EVENT_TYPE);
     }
 
     /**

@@ -36,11 +36,11 @@ import javax.annotation.Nonnull;
 @DeprecatedSince("4.2.0")
 public class SelfUpdateEmailEvent extends GenericSelfUpdateEvent<String>
 {
-    public static final String IDENTIFIER = "email";
+    public static final String EVENT_TYPE = "email";
 
     public SelfUpdateEmailEvent(@Nonnull JDA api, long responseNumber, @Nonnull String oldEmail)
     {
-        super(api, responseNumber, oldEmail, api.getSelfUser().getEmail(), IDENTIFIER);
+        super(api, responseNumber, oldEmail, api.getSelfUser().getEmail(), EVENT_TYPE);
     }
 
     /**

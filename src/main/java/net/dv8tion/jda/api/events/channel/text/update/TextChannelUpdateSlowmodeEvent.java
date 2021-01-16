@@ -29,11 +29,11 @@ import javax.annotation.Nonnull;
  */
 public class TextChannelUpdateSlowmodeEvent extends GenericTextChannelUpdateEvent<Integer>
 {
-    public static final String IDENTIFIER = "slowmode";
+    public static final String EVENT_TYPE = "slowmode";
 
     public TextChannelUpdateSlowmodeEvent(@Nonnull JDA api, long responseNumber, @Nonnull TextChannel channel, int oldSlowmode)
     {
-        super(api, responseNumber, channel, oldSlowmode, channel.getSlowmode(), IDENTIFIER);
+        super(api, responseNumber, channel, oldSlowmode, channel.getSlowmode(), EVENT_TYPE);
     }
 
     /**

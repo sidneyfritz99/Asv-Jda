@@ -44,11 +44,11 @@ import java.time.OffsetDateTime;
  */
 public class GuildMemberUpdateBoostTimeEvent extends GenericGuildMemberUpdateEvent<OffsetDateTime>
 {
-    public static final String IDENTIFIER = "boost_time";
+    public static final String EVENT_TYPE = "boost_time";
 
     public GuildMemberUpdateBoostTimeEvent(@Nonnull JDA api, long responseNumber, @Nonnull Member member, @Nullable OffsetDateTime previous)
     {
-        super(api, responseNumber, member, previous, member.getTimeBoosted(), IDENTIFIER);
+        super(api, responseNumber, member, previous, member.getTimeBoosted(), EVENT_TYPE);
     }
 
     /**

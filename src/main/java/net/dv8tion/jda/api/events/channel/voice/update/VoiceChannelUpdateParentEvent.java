@@ -32,11 +32,11 @@ import javax.annotation.Nullable;
  */
 public class VoiceChannelUpdateParentEvent extends GenericVoiceChannelUpdateEvent<Category>
 {
-    public static final String IDENTIFIER = "parent";
+    public static final String EVENT_TYPE = "parent";
 
     public VoiceChannelUpdateParentEvent(@Nonnull JDA api, long responseNumber, @Nonnull VoiceChannel channel, @Nullable Category oldParent)
     {
-        super(api, responseNumber, channel, oldParent, channel.getParent(), IDENTIFIER);
+        super(api, responseNumber, channel, oldParent, channel.getParent(), EVENT_TYPE);
     }
 
     /**

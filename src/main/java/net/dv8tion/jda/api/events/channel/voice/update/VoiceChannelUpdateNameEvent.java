@@ -29,11 +29,11 @@ import javax.annotation.Nonnull;
  */
 public class VoiceChannelUpdateNameEvent extends GenericVoiceChannelUpdateEvent<String>
 {
-    public static final String IDENTIFIER = "name";
+    public static final String EVENT_TYPE = "name";
 
     public VoiceChannelUpdateNameEvent(@Nonnull JDA api, long responseNumber, @Nonnull VoiceChannel channel, @Nonnull String oldName)
     {
-        super(api, responseNumber, channel, oldName, channel.getName(), IDENTIFIER);
+        super(api, responseNumber, channel, oldName, channel.getName(), EVENT_TYPE);
     }
 
     /**

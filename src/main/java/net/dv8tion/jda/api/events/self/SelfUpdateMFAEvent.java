@@ -30,11 +30,11 @@ import javax.annotation.Nonnull;
  */
 public class SelfUpdateMFAEvent extends GenericSelfUpdateEvent<Boolean>
 {
-    public static final String IDENTIFIER = "mfa_enabled";
+    public static final String EVENT_TYPE = "mfa_enabled";
 
     public SelfUpdateMFAEvent(@Nonnull JDA api, long responseNumber, boolean wasMfaEnabled)
     {
-        super(api, responseNumber, wasMfaEnabled, !wasMfaEnabled, IDENTIFIER);
+        super(api, responseNumber, wasMfaEnabled, !wasMfaEnabled, EVENT_TYPE);
     }
 
     /**

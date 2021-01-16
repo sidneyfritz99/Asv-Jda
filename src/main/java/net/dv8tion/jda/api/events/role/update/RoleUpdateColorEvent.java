@@ -32,11 +32,11 @@ import java.awt.Color;
  */
 public class RoleUpdateColorEvent extends GenericRoleUpdateEvent<Integer>
 {
-    public static final String IDENTIFIER = "color";
+    public static final String EVENT_TYPE = "color";
 
     public RoleUpdateColorEvent(@Nonnull JDA api, long responseNumber, @Nonnull Role role, int oldColor)
     {
-        super(api, responseNumber, role, oldColor, role.getColorRaw(), IDENTIFIER);
+        super(api, responseNumber, role, oldColor, role.getColorRaw(), EVENT_TYPE);
     }
 
     /**

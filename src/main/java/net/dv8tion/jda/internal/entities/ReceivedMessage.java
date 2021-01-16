@@ -301,9 +301,11 @@ public class ReceivedMessage extends AbstractMessage
     }
 
     @Nonnull
-    @Override
-    public synchronized List<User> getMentionedUsers()
+    public synchronized List<User> getMentionedUsers(boolean create)
     {
+        if(!create)
+            return new ArrayList<>();
+
         if (userMentions == null)
             userMentions = Collections.unmodifiableList(processMentions(MentionType.USER, new ArrayList<>(), true, this::matchUser));
         return userMentions;
@@ -323,9 +325,11 @@ public class ReceivedMessage extends AbstractMessage
     }
 
     @Nonnull
-    @Override
-    public synchronized List<TextChannel> getMentionedChannels()
+    public synchronized List<TextChannel> getMentionedChannels(boolean create)
     {
+        if(!create)
+            return new ArrayList<>();
+
         if (channelMentions == null)
             channelMentions = Collections.unmodifiableList(processMentions(MentionType.CHANNEL, new ArrayList<>(), true, this::matchTextChannel));
         return channelMentions;
@@ -350,9 +354,11 @@ public class ReceivedMessage extends AbstractMessage
     }
 
     @Nonnull
-    @Override
-    public synchronized List<Role> getMentionedRoles()
+    public synchronized List<Role> getMentionedRoles(boolean create)
     {
+        if(!create)
+            return new ArrayList<>();
+
         if (roleMentions == null)
             roleMentions = Collections.unmodifiableList(processMentions(MentionType.ROLE, new ArrayList<>(), true, this::matchRole));
         return roleMentions;
@@ -403,10 +409,10 @@ public class ReceivedMessage extends AbstractMessage
         List<IMentionable> mentions = new ArrayList<>();
         // boolean duplicate checks
         // not using Set because channel and role might have the same ID
-        boolean channel = false;
-        boolean role = false;
-        boolean user = false;
-        boolean emote = false;
+        boolean channel = true;
+        boolean role = true;
+        boolean user = true;
+        boolean emote = true;
         for (MentionType type : types)
         {
             switch (type)
@@ -415,24 +421,20 @@ public class ReceivedMessage extends AbstractMessage
                 case HERE:
                 default: continue;
                 case CHANNEL:
-                    if (!channel)
-                        mentions.addAll(getMentionedChannels());
-                    channel = true;
+                    mentions.addAll(getMentionedChannels(channel));
+                    channel = false;
                     break;
                 case USER:
-                    if (!user)
-                        mentions.addAll(getMentionedUsers());
-                    user = true;
+                    mentions.addAll(getMentionedUsers(user));
+                    user = false;
                     break;
                 case ROLE:
-                    if (!role)
-                        mentions.addAll(getMentionedRoles());
-                    role = true;
+                    mentions.addAll(getMentionedRoles(role));
+                    role = false;
                     break;
                 case EMOTE:
-                    if (!emote)
-                        mentions.addAll(getEmotes());
-                    emote = true;
+                    mentions.addAll(getEmotes(emote));
+                    emote = false;
             }
         }
         return Collections.unmodifiableList(mentions);
@@ -726,9 +728,11 @@ public class ReceivedMessage extends AbstractMessage
     }
 
     @Nonnull
-    @Override
-    public synchronized List<Emote> getEmotes()
+    public synchronized List<Emote> getEmotes(boolean create)
     {
+        if(!create)
+            return new ArrayList<>();
+
         if (this.emoteMentions == null)
             emoteMentions = Collections.unmodifiableList(processMentions(MentionType.EMOTE, new ArrayList<>(), true, this::matchEmote));
         return emoteMentions;

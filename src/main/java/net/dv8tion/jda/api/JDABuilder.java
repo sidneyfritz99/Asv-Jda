@@ -58,6 +58,9 @@ import java.util.stream.Collectors;
 public class JDABuilder
 {
     public static final int GUILD_SUBSCRIPTIONS = GatewayIntent.getRaw(GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_PRESENCES, GatewayIntent.GUILD_MESSAGE_TYPING);
+
+    private static final String GATEWAY_INTENT = "GatewayIntent";
+
     protected final List<Object> listeners = new LinkedList<>();
     protected final EnumSet<CacheFlag> automaticallyDisabled = EnumSet.noneOf(CacheFlag.class);
 
@@ -220,8 +223,8 @@ public class JDABuilder
     @CheckReturnValue
     public static JDABuilder createDefault(@Nullable String token, @Nonnull GatewayIntent intent, @Nonnull GatewayIntent... intents)
     {
-        Checks.notNull(intent, "GatewayIntent");
-        Checks.noneNull(intents, "GatewayIntent");
+        Checks.notNull(intent, GATEWAY_INTENT);
+        Checks.noneNull(intents, GATEWAY_INTENT);
         return createDefault(token, EnumSet.of(intent, intents));
     }
 
@@ -327,8 +330,8 @@ public class JDABuilder
     @CheckReturnValue
     public static JDABuilder createLight(@Nullable String token, @Nonnull GatewayIntent intent, @Nonnull GatewayIntent... intents)
     {
-        Checks.notNull(intent, "GatewayIntent");
-        Checks.noneNull(intents, "GatewayIntent");
+        Checks.notNull(intent, GATEWAY_INTENT);
+        Checks.noneNull(intents, GATEWAY_INTENT);
         return createLight(token, EnumSet.of(intent, intents));
     }
 
@@ -1581,7 +1584,7 @@ public class JDABuilder
     @Nonnull
     public JDABuilder disableIntents(@Nonnull Collection<GatewayIntent> intents)
     {
-        Checks.noneNull(intents, "GatewayIntent");
+        Checks.noneNull(intents, GATEWAY_INTENT);
         int raw = GatewayIntent.getRaw(intents);
         this.intents &= ~raw;
         return this;
@@ -1610,8 +1613,8 @@ public class JDABuilder
     @Nonnull
     public JDABuilder disableIntents(@Nonnull GatewayIntent intent, @Nonnull GatewayIntent... intents)
     {
-        Checks.notNull(intent, "GatewayIntent");
-        Checks.noneNull(intents, "GatewayIntent");
+        Checks.notNull(intent, GATEWAY_INTENT);
+        Checks.noneNull(intents, GATEWAY_INTENT);
         int raw = GatewayIntent.getRaw(intent, intents);
         this.intents &= ~raw;
         return this;
@@ -1700,7 +1703,7 @@ public class JDABuilder
     @Nonnull
     public JDABuilder enableIntents(@Nonnull Collection<GatewayIntent> intents)
     {
-        Checks.noneNull(intents, "GatewayIntent");
+        Checks.noneNull(intents, GATEWAY_INTENT);
         int raw = GatewayIntent.getRaw(intents);
         this.intents |= raw;
         return this;
@@ -1725,8 +1728,8 @@ public class JDABuilder
     @Nonnull
     public JDABuilder enableIntents(@Nonnull GatewayIntent intent, @Nonnull GatewayIntent... intents)
     {
-        Checks.notNull(intent, "GatewayIntent");
-        Checks.noneNull(intents, "GatewayIntent");
+        Checks.notNull(intent, GATEWAY_INTENT);
+        Checks.noneNull(intents, GATEWAY_INTENT);
         int raw = GatewayIntent.getRaw(intent, intents);
         this.intents |= raw;
         return this;

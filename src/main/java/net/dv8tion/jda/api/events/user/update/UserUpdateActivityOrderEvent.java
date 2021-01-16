@@ -44,13 +44,13 @@ import java.util.List;
  */
 public class UserUpdateActivityOrderEvent extends GenericUserUpdateEvent<List<Activity>> implements GenericUserPresenceEvent
 {
-    public static final String IDENTIFIER = "activity_order";
+    public static final String EVENT_TYPE = "activity_order";
 
     private final Member member;
 
     public UserUpdateActivityOrderEvent(@Nonnull JDAImpl api, long responseNumber, @Nonnull List<Activity> previous, @Nonnull Member member)
     {
-        super(api, responseNumber, member.getUser(), previous, member.getActivities(), IDENTIFIER);
+        super(api, responseNumber, member.getUser(), previous, member.getActivities(), EVENT_TYPE);
         this.member = member;
     }
 

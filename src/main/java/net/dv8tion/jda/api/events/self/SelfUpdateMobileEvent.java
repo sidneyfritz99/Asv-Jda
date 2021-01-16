@@ -36,11 +36,11 @@ import javax.annotation.Nonnull;
 @DeprecatedSince("4.2.0")
 public class SelfUpdateMobileEvent extends GenericSelfUpdateEvent<Boolean>
 {
-    public static final String IDENTIFIER = "mobile";
+    public static final String EVENT_TYPE = "mobile";
 
     public SelfUpdateMobileEvent(@Nonnull JDA api, long responseNumber, boolean wasMobile)
     {
-        super(api, responseNumber, wasMobile, !wasMobile, IDENTIFIER);
+        super(api, responseNumber, wasMobile, !wasMobile, EVENT_TYPE);
     }
 
     /**

@@ -41,11 +41,11 @@ import javax.annotation.Nonnull;
  */
 public class UserUpdateDiscriminatorEvent extends GenericUserUpdateEvent<String>
 {
-    public static final String IDENTIFIER = "discriminator";
+    public static final String EVENT_TYPE = "discriminator";
 
     public UserUpdateDiscriminatorEvent(@Nonnull JDA api, long responseNumber, @Nonnull User user, @Nonnull String oldDiscriminator)
     {
-        super(api, responseNumber, user, oldDiscriminator, user.getDiscriminator(), IDENTIFIER);
+        super(api, responseNumber, user, oldDiscriminator, user.getDiscriminator(), EVENT_TYPE);
     }
 
     /**

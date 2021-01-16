@@ -29,11 +29,11 @@ import javax.annotation.Nonnull;
  */
 public class SelfUpdateVerifiedEvent extends GenericSelfUpdateEvent<Boolean>
 {
-    public static final String IDENTIFIER = "verified";
+    public static final String EVENT_TYPE = "verified";
 
     public SelfUpdateVerifiedEvent(@Nonnull JDA api, long responseNumber, boolean wasVerified)
     {
-        super(api, responseNumber, wasVerified, !wasVerified, IDENTIFIER);
+        super(api, responseNumber, wasVerified, !wasVerified, EVENT_TYPE);
     }
 
     /**

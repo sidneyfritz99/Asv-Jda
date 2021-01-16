@@ -33,11 +33,11 @@ import javax.annotation.Nullable;
  */
 public class GuildUpdateBannerEvent extends GenericGuildUpdateEvent<String>
 {
-    public static final String IDENTIFIER = "banner";
+    public static final String EVENT_TYPE = "banner";
 
     public GuildUpdateBannerEvent(@Nonnull JDA api, long responseNumber, @Nonnull Guild guild, @Nullable String previous)
     {
-        super(api, responseNumber, guild, previous, guild.getBannerId(), IDENTIFIER);
+        super(api, responseNumber, guild, previous, guild.getBannerId(), EVENT_TYPE);
     }
 
     /**

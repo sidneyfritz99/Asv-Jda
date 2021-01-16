@@ -36,11 +36,11 @@ import javax.annotation.Nonnull;
 @DeprecatedSince("4.2.0")
 public class SelfUpdateNitroEvent extends GenericSelfUpdateEvent<Boolean>
 {
-    public static final String IDENTIFIER = "nitro";
+    public static final String EVENT_TYPE = "nitro";
 
     public SelfUpdateNitroEvent(@Nonnull JDA api, long responseNumber, boolean wasNitro)
     {
-        super(api, responseNumber, wasNitro, !wasNitro, IDENTIFIER);
+        super(api, responseNumber, wasNitro, !wasNitro, EVENT_TYPE);
     }
 
     /**

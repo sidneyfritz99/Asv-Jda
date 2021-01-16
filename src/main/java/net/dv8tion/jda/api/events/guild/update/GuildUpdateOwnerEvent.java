@@ -32,13 +32,13 @@ import javax.annotation.Nullable;
  */
 public class GuildUpdateOwnerEvent extends GenericGuildUpdateEvent<Member>
 {
-    public static final String IDENTIFIER = "owner";
+    public static final String EVENT_TYPE = "owner";
     private final long prevId, nextId;
 
     public GuildUpdateOwnerEvent(@Nonnull JDA api, long responseNumber, @Nonnull Guild guild, @Nullable Member oldOwner,
                                  long prevId, long nextId)
     {
-        super(api, responseNumber, guild, oldOwner, guild.getOwner(), IDENTIFIER);
+        super(api, responseNumber, guild, oldOwner, guild.getOwner(), EVENT_TYPE);
         this.prevId = prevId;
         this.nextId = nextId;
     }

@@ -31,11 +31,11 @@ import java.util.Set;
  */
 public class GuildUpdateFeaturesEvent extends GenericGuildUpdateEvent<Set<String>>
 {
-    public static final String IDENTIFIER = "features";
+    public static final String EVENT_TYPE = "features";
 
     public GuildUpdateFeaturesEvent(@Nonnull JDA api, long responseNumber, @Nonnull Guild guild, @Nonnull Set<String> oldFeatures)
     {
-        super(api, responseNumber, guild, oldFeatures, guild.getFeatures(), IDENTIFIER);
+        super(api, responseNumber, guild, oldFeatures, guild.getFeatures(), EVENT_TYPE);
     }
 
     /**

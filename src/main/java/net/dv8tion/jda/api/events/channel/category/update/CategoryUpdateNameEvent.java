@@ -30,11 +30,11 @@ import javax.annotation.Nonnull;
  */
 public class CategoryUpdateNameEvent extends GenericCategoryUpdateEvent<String>
 {
-    public static final String IDENTIFIER = "name";
+    public static final String EVENT_TYPE = "name";
 
     public CategoryUpdateNameEvent(@Nonnull JDA api, long responseNumber, @Nonnull Category category, @Nonnull String oldName)
     {
-        super(api, responseNumber, category, oldName, category.getName(), IDENTIFIER);
+        super(api, responseNumber, category, oldName, category.getName(), EVENT_TYPE);
     }
 
     /**

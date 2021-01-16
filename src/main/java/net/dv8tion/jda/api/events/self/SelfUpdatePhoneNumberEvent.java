@@ -37,11 +37,11 @@ import javax.annotation.Nullable;
 @DeprecatedSince("4.2.0")
 public class SelfUpdatePhoneNumberEvent extends GenericSelfUpdateEvent<String>
 {
-    public static final String IDENTIFIER = "phone";
+    public static final String EVENT_TYPE = "phone";
 
     public SelfUpdatePhoneNumberEvent(@Nonnull JDA api, long responseNumber, @Nullable String oldPhoneNumber)
     {
-        super(api, responseNumber, oldPhoneNumber, api.getSelfUser().getPhoneNumber(), IDENTIFIER);
+        super(api, responseNumber, oldPhoneNumber, api.getSelfUser().getPhoneNumber(), EVENT_TYPE);
     }
 
     /**

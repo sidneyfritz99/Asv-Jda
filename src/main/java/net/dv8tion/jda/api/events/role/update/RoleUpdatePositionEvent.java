@@ -30,14 +30,14 @@ import javax.annotation.Nonnull;
  */
 public class RoleUpdatePositionEvent extends GenericRoleUpdateEvent<Integer>
 {
-    public static final String IDENTIFIER = "position";
+    public static final String EVENT_TYPE = "position";
 
     private final int oldPositionRaw;
     private final int newPositionRaw;
 
     public RoleUpdatePositionEvent(@Nonnull JDA api, long responseNumber, @Nonnull Role role, int oldPosition, int oldPositionRaw)
     {
-        super(api, responseNumber, role, oldPosition, role.getPosition(), IDENTIFIER);
+        super(api, responseNumber, role, oldPosition, role.getPosition(), EVENT_TYPE);
         this.oldPositionRaw = oldPositionRaw;
         this.newPositionRaw = role.getPositionRaw();
     }

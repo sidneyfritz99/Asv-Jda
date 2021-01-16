@@ -31,14 +31,14 @@ import javax.annotation.Nonnull;
  */
 public class GuildUpdateRegionEvent extends GenericGuildUpdateEvent<Region>
 {
-    public static final String IDENTIFIER = "region";
+    public static final String EVENT_TYPE = "region";
 
     private final String oldRegion;
     private final String newRegion;
 
     public GuildUpdateRegionEvent(@Nonnull JDA api, long responseNumber, @Nonnull Guild guild, @Nonnull String oldRegion)
     {
-        super(api, responseNumber, guild, Region.fromKey(oldRegion), guild.getRegion(), IDENTIFIER);
+        super(api, responseNumber, guild, Region.fromKey(oldRegion), guild.getRegion(), EVENT_TYPE);
         this.oldRegion = oldRegion;
         this.newRegion = guild.getRegionRaw();
     }

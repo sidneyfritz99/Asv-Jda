@@ -31,11 +31,11 @@ import javax.annotation.Nullable;
  */
 public class GuildUpdateDescriptionEvent extends GenericGuildUpdateEvent<String>
 {
-    public static final String IDENTIFIER = "description";
+    public static final String EVENT_TYPE = "description";
 
     public GuildUpdateDescriptionEvent(@Nonnull JDA api, long responseNumber, @Nonnull Guild guild, @Nullable String previous)
     {
-        super(api, responseNumber, guild, previous, guild.getDescription(), IDENTIFIER);
+        super(api, responseNumber, guild, previous, guild.getDescription(), EVENT_TYPE);
     }
 
     /**

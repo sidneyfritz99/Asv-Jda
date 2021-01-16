@@ -30,11 +30,11 @@ import javax.annotation.Nonnull;
  */
 public class GuildUpdateNotificationLevelEvent extends GenericGuildUpdateEvent<Guild.NotificationLevel>
 {
-    public static final String IDENTIFIER = "notification_level";
+    public static final String EVENT_TYPE = "notification_level";
 
     public GuildUpdateNotificationLevelEvent(@Nonnull JDA api, long responseNumber, @Nonnull Guild guild, @Nonnull Guild.NotificationLevel oldNotificationLevel)
     {
-        super(api, responseNumber, guild, oldNotificationLevel, guild.getDefaultNotificationLevel(), IDENTIFIER);
+        super(api, responseNumber, guild, oldNotificationLevel, guild.getDefaultNotificationLevel(), EVENT_TYPE);
     }
 
     /**

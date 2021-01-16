@@ -32,14 +32,14 @@ import java.util.EnumSet;
  */
 public class RoleUpdatePermissionsEvent extends GenericRoleUpdateEvent<EnumSet<Permission>>
 {
-    public static final String IDENTIFIER = "permission";
+    public static final String EVENT_TYPE = "permission";
 
     private final long oldPermissionsRaw;
     private final long newPermissionsRaw;
 
     public RoleUpdatePermissionsEvent(@Nonnull JDA api, long responseNumber, @Nonnull Role role, long oldPermissionsRaw)
     {
-        super(api, responseNumber, role, Permission.getPermissions(oldPermissionsRaw), role.getPermissions(), IDENTIFIER);
+        super(api, responseNumber, role, Permission.getPermissions(oldPermissionsRaw), role.getPermissions(), EVENT_TYPE);
         this.oldPermissionsRaw = oldPermissionsRaw;
         this.newPermissionsRaw = role.getPermissionsRaw();
     }
